@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Welcome</title>
+        <link rel="stylesheet" href="css/selection window.css" type="text/css">
+       
+        <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Lato|Quicksand'>
+        <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'>
+        <script src="main.js"></script>
+
+		
+        
+    </head>
+    <body>
+        <div class="heading">
+            <span class="title1">GTCoding</span>
+            <span class="title2">For those who love technology</span>
+            <button class="register">
+                <a href="#modal" class="registerLink">REGISTER NOW</a>
+            </button>
+        </div>
+        
+        <div class="modal_container" id="modal">
+            <div class="modal">
+                <a href="#" class="close">X</a>
+                <span class="modal_heading">
+                    ENTER YOUR DETAILS
+                </span>
+                <form action="#">
+
+                    <div class="sel sel--black-panther">
+                      <select name="select-profession" id="select-profession">
+                        <option value="" disabled>Select Your Department</option>
+                        <option value="CHE">Chemical Engineering</option>
+                        <option value="CSE">Computer Science and Engineering</option>
+                        <option value="ECE">Electronics and Communications Engineering</option>
+                        <option value="MEE">Mechanical Engineering</option>
+                        <option value="MSME">Material Science and Metallurgical Engineering</option>
+                        <option value="IT">Information Technology</option>
+                      </select>
+                    </div>
+
+                    <div class="sel sel--superman">
+                      <select name="select-superpower" id="select-superpower">
+                        <option value="" disabled>Select Semester</option>
+                        <option value="1">Semester - I</option>
+                        <option value="2">Semester - II</option>
+                        <option value="3">Semester - III</option>
+                        <option value="4">Semester - IV</option>
+                        <option value="5">Semester - V</option>
+                        <option value="6">Semester - VI</option>
+                        <option value="7">Semester - VII</option>
+                        <option value="8">Semester - VIII</option>
+                      </select>
+                    </div>
+                    <input type="submit" class="btnRegister" value="REGISTER">
+                   
+                </form>
+               
+            </div>
+        </div>
+       <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+
+    <script src="js/selection.js"></script>
+
+    </body>
+</html>

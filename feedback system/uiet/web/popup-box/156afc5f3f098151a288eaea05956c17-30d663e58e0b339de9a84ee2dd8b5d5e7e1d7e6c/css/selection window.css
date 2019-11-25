@@ -1,0 +1,368 @@
+*{
+    margin:0;
+    padding:0;
+    
+}
+html, body{
+    height:100%;
+    
+}
+
+body{
+    background-color:#0c0129;
+    background-image:url(images/coding.jpg);
+    background-position:center;
+    background-size:cover;
+    background-blend-mode:soft-light;
+}
+
+.heading{
+    width:600px;
+    height:300px;
+    margin:auto;
+    position:absolute;
+    top:0px; bottom:0px; right:0px; left:0px;
+}
+.title1{
+    display: block;
+    text-align: center;
+    color:white;
+    font-size:60pt;
+    font-family:Quicksand;
+}
+.title2{
+    display:block;
+    margin-top:15px;
+    text-align: center;
+    color:white;
+    font-size:14pt;
+    font-family:Quicksand;
+}
+
+.register{
+    margin: 50px auto;
+    display:block;
+    width:180px;
+    height:50px;
+    border:3px solid white;
+    background-color:rgba(255,255,255,0);
+    color:white;
+    font-family:sans-serif;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 1000ms, color 1000ms;
+}
+.register:hover{
+    background-color:rgba(255,255,255,1);
+    color:#222;
+    cursor:pointer;
+    transition: background-color 1000ms, color 1000ms;
+}
+
+
+.registerLink{
+    text-decoration: none;
+    display:block;
+    padding:15px;
+    color:white;
+    transition: color 1000ms;
+}
+
+.registerLink:hover{
+    color:black;
+}
+
+
+/* MODAL */
+
+.modal_container{
+    width:100%;
+    height:100%;
+    pointer-events: none;
+    opacity: 0;
+    position:fixed;
+   /* background:rgba(2, 70, 88, 0.8);*/
+    transition:all 500ms ease;
+}
+
+.modal_container:target{
+    opacity:1;
+    pointer-events: auto;
+}
+
+.modal_container > div{
+    transform: translate(0px, -50px);
+	transition: all 500ms ease;
+}
+
+.modal_container:target > div{
+    transform: translate(0px, 0px);
+}
+
+
+.modal{
+    width:655px;
+    height:320px;
+    margin:auto;
+    position: absolute;
+    top:0px; bottom:0px;
+    right:0px; left:0px;
+    background:white;
+    border:2px solid #222;
+    padding:20px;
+    box-shadow: 0px 0px 50px 5px black;
+}
+
+.modal_heading{
+    box-sizing: border-box;
+    width:100%;
+    display:block;
+    height:60px;
+    margin-bottom:30px;
+    color:black;
+    padding:10px;
+    text-align: center;
+    font-size:25pt;
+    font-family: Quicksand;
+    border-bottom: 3px solid Black;
+
+}
+
+input{
+    margin-bottom: 15px;
+    padding:10px;
+    width:100%;
+    box-sizing: border-box;
+    border-radius: 5px;
+    height:50px;
+    border:0px;
+    font-family: georgia;
+    font-size: 11pt;
+    text-align: center;
+}
+
+.btnRegister{
+    background:black;
+    color:white;
+    font-size:15pt;
+
+    
+}
+.btnRegister:hover{
+    background:gray;
+}
+.close{
+    color:white;
+    position: absolute;
+    border:2px solid #333;
+    padding:7px 9px 11px 9px;
+    font-family: big john;
+    background:black;
+    text-decoration: none;
+    top:-20px;
+    right:-20px;
+    border-radius: 50%;
+    transition: background 500ms;
+}
+
+.close:hover{
+    background:#444;
+    cursor:pointer;
+}
+
+
+/*-------------------------------------------------------------popup window style css ends here------------------------------------------------------------*/
+
+
+/*---------------------------------------------------------selection menu css---------------------------------------------------------------------*/
+
+/* ===== Resets and Housekeeping ===== */
+* {
+  padding: 0;
+  margin: 0;
+}
+
+/* ===== Actual Styles ===== */
+
+/* ===== Horizontal Rule ===== */
+.rule {
+  margin: 10px 0;
+  border: none;
+  height: 1.5px;
+  background-image: -webkit-linear-gradient(left, #f0f0f0, #c9bbae, #f0f0f0);
+  background-image: linear-gradient(left, #f0f0f0, #c9bbae, #f0f0f0);
+}
+
+/* ===== Select Box ===== */
+.sel {
+  font-size: 11px;
+  display:block;
+  margin: 3em 2em;
+  width: 620px;
+  background-color: transparent;
+  position: relative;
+  cursor: pointer;
+}
+
+.sel::before {
+  position: absolute;
+  content: '\f063';
+  font-family: 'FontAwesome';
+  font-size: 2em;
+  color: lightgray;
+  right: 0px;
+  top: calc(50% - 0.5em);
+}
+
+.sel.active::before {
+  -webkit-transform: rotateX(-180deg);
+          transform: rotateX(-180deg);
+}
+
+.sel__placeholder {
+  display: block;
+  font-family: 'Quicksand';
+  font-size: 2.3em;
+  color: #838e95;
+  padding: 0.2em 0.5em;
+  text-align: left;
+  overflow: auto;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  visibility: visible;
+}
+
+.sel.active .sel__placeholder {
+  visibility: hidden;
+}
+
+.sel__placeholder::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.2em 0.5em;
+  content: attr(data-placeholder);
+  visibility: hidden;
+}
+
+.sel.active .sel__placeholder::before {
+  visibility: visible;
+}
+
+.sel__box {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: -4px;
+  display: none;
+  list-style-type: none;
+  text-align: left;
+  font-size: 1em;
+  background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+  width: calc(100% + 8px);
+  box-sizing: border-box;
+}
+
+.sel.active .sel__box {
+  display: block;
+  -webkit-animation: fadeInUp 500ms;
+          animation: fadeInUp 500ms;
+}
+
+.sel__box__options {
+  display: list-item;
+  font-family: 'Quicksand';
+  font-size: 1.5em;
+  color: #838e95;
+  padding: 0.5em 1em;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.sel__box__options::after {
+  content: '\f00c';
+  font-family: 'FontAwesome';
+  font-size: 0.5em;
+  margin-left: 5px;
+  display: none;
+}
+
+.sel__box__options.selected::after {
+  display: inline;
+}
+
+.sel__box__options:hover {
+  background-color: #ebedef;
+}
+
+/* ----- Select Box Black Panther ----- */
+.sel {
+  border-bottom: 4px solid rgba(0, 0, 0, 0.3);
+}
+
+.sel--black-panther {
+  z-index: 3;
+}
+
+/* ----- Select Box Superman ----- */
+.sel--superman {
+/*   display: none; */
+  z-index: 2;
+}
+
+/* ===== Keyframes ===== */
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 20px, 0);
+            transform: translate3d(0, 20px, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 20px, 0);
+            transform: translate3d(0, 20px, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+/*------------------------------------------------------------------selection menu css ends here------------------------------------------------------*/
